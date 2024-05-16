@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+  <data>
+
+    <record
+      id="prepayment_view_account_journal_form_inherit_account"
+      model="ir.ui.view"
+    >
+      <field name="name">account.journal.view.form.inherit</field>
+      <field name="model">account.journal</field>
+      <field name="inherit_id" ref="account.view_account_journal_form" />
+      <field name="arch" type="xml">
+        <xpath expr="//label[@for='default_account_id']" position="after">
+          <label
+            for="default_account_id"
+            string="Crossed Prepayment Account"
+            attrs="{'invisible': [('type', '!=', 'crossed_prepayment')]}"
+            groups="account.group_account_readonly"
+          />
+        </xpath>
+        <xpath expr="//field[@name='suspense_account_id']" position="attributes">
+          <attribute name="attrs">
+            {'invisible':[('type','not in',('bank','cash','crossed_prepayment'))]}
+          </attribute>
+        </xpath>
+        <xpath expr="//field[@name='profit_account_id']" position="attributes">
+          <attribute name="attrs">
+            {'invisible':['!',('type','in',('cash','bank','crossed_prepayment'))]}
+          </attribute>
+        </xpath>
+        <xpath expr="//field[@name='loss_account_id']" position="attributes">
+          <attribute name="attrs">
+            {'invisible':['!',('type','in',('cash','bank','crossed_prepayment'))]}
+          </attribute>
+        </xpath>
+        <xpath expr="//field[@name='payment_sequence']" position="attributes">
+          <attribute name="attrs">
+            {'invisible':[('type','not in',('bank', 'cash','crossed_prepayment'))]}
+          </attribute>
+        </xpath>
+        <xpath expr="//page[@id='inbound_payment_settings']" position="attributes">
+          <attribute name="attrs">
+            {'invisible':[('type','not in',['cash','bank','crossed_prepayment'])]}
+          </attribute>
+        </xpath>
+        <xpath expr="//page[@id='outbound_payment_settings']" position="attributes">
+          <attribute name="attrs">
+            {'invisible':[('type','not in',['cash','bank','crossed_prepayment'])]}
+          </attribute>
+        </xpath>
+      </field>
+    </record>
+
+  </data>
+
+
+</odoo>

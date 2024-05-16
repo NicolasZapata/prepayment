@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+  <data>
+
+    <record
+      id="prepayment_view_move_form_inherit_account"
+      model="ir.ui.view"
+    >
+      <field name="name">account.move.view.form.inherit</field>
+      <field name="model">account.move</field>
+      <field name="inherit_id" ref="account.view_move_form" />
+      <field name="arch" type="xml">
+        <xpath
+          expr="//field[@name='invoice_outstanding_credits_debits_widget']"
+          position="after"
+        >
+          <group
+            name="invoice_prepayment_widget"
+            class="footer oe_right"
+            attrs="{'invisible': [('invoice_outstanding_credits_debits_widget', '=', False)]}"
+            groups="account.group_account_invoice,account.group_account_readonly"
+          >
+            <button
+              name="action_register_prepayment"
+              type="object"
+              class="btn-primary"
+              icon="fa-money"
+            />
+            <div class="oe_inline o_td_label">
+              <label
+                for="action_register_prepayment"
+                string="Register Prepayment"
+              />
+            </div>
+          </group>
+        </xpath>
+      </field>
+    </record>
+
+  </data>
+
+
+</odoo>

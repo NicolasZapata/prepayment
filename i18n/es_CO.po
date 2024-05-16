@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 16.0-20231120\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-05-10 20:52+0000\n"
-"PO-Revision-Date: 2024-05-10 15:55-0500\n"
+"POT-Creation-Date: 2024-05-16 21:15+0000\n"
+"PO-Revision-Date: 2024-05-16 16:16-0500\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: es_CO\n"
@@ -18,15 +18,24 @@ msgstr ""
 "X-Generator: Poedit 3.4.4\n"
 
 #. module: prepayment
-#: model:ir.model.fields.selection,name:prepayment.selection__account_journal__type__crossed_prepayment
-#, fuzzy
-msgid "Crossed Prepayment"
-msgstr "Pago anticipado cruzado"
+#: model:ir.model,name:prepayment.model_account_account
+msgid "Account"
+msgstr "Cuenta"
 
 #. module: prepayment
-#: model:ir.model,name:prepayment.model_account_account
-msgid "Description"
-msgstr "Cuenta"
+#: model:ir.model,name:prepayment.model_res_partner
+msgid "Contact"
+msgstr "Contacto"
+
+#. module: prepayment
+#: model:ir.model.fields.selection,name:prepayment.selection__account_journal__type__crossed_prepayment
+msgid "Crossed Prepayment"
+msgstr "Pago cruzado anticipado"
+
+#. module: prepayment
+#: model_terms:ir.ui.view,arch_db:prepayment.prepayment_view_account_journal_form_inherit_account
+msgid "Crossed Prepayment Account"
+msgstr "Cuenta de cruce de anticipo"
 
 #. module: prepayment
 #: model:ir.model,name:prepayment.model_account_journal
@@ -40,14 +49,27 @@ msgstr "Asiento contable"
 
 #. module: prepayment
 #: model:ir.model.fields,field_description:prepayment.field_account_account__prepayment
-#, fuzzy
 msgid "Prepayment"
 msgstr "Pago adelantado"
 
 #. module: prepayment
+#: model:ir.model.fields,field_description:prepayment.field_res_partner__prepayment_account_id
+#: model:ir.model.fields,field_description:prepayment.field_res_users__prepayment_account_id
+msgid "Prepayment Account"
+msgstr "Cuenta de anticipo"
+
+#. module: prepayment
+#. odoo-python
+#: code:addons/prepayment/models/account_move.py:0
 #: model:ir.model,name:prepayment.model_account_payment_register
+#, python-format
 msgid "Register Payment"
 msgstr "Registrar pago"
+
+#. module: prepayment
+#: model_terms:ir.ui.view,arch_db:prepayment.prepayment_view_move_form_inherit_account
+msgid "Register Prepayment"
+msgstr "Registrar pago por anticipo"
 
 #. module: prepayment
 #: model:ir.model.fields,help:prepayment.field_account_journal__type
