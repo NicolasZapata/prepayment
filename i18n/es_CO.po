@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: Odoo Server 16.0-20231120\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-05-16 21:15+0000\n"
-"PO-Revision-Date: 2024-05-16 16:16-0500\n"
+"PO-Revision-Date: 2024-05-24 16:58-0500\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: es_CO\n"
@@ -20,7 +20,7 @@ msgstr ""
 #. module: prepayment
 #: model:ir.model,name:prepayment.model_account_account
 msgid "Account"
-msgstr "Cuenta"
+msgstr "Cuenta de cruce de anticipo"
 
 #. module: prepayment
 #: model:ir.model,name:prepayment.model_res_partner
@@ -30,7 +30,7 @@ msgstr "Contacto"
 #. module: prepayment
 #: model:ir.model.fields.selection,name:prepayment.selection__account_journal__type__crossed_prepayment
 msgid "Crossed Prepayment"
-msgstr "Pago cruzado anticipado"
+msgstr "Cruce de anticipos"
 
 #. module: prepayment
 #: model_terms:ir.ui.view,arch_db:prepayment.prepayment_view_account_journal_form_inherit_account
